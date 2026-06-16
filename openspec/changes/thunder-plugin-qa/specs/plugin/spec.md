@@ -45,7 +45,8 @@ ThunderTools/PluginQA/
 ---
 
 ### Requirement: Setup script modifies VS Code settings.json to register prompt location
-The `setup-prompts.py` script MUST modify the user-level VS Code `settings.json` to add
+The `setup-prompts.py` script MUST modify the user-level VS Code `settings.json` to add the `ThunderTools/PluginQA/Prompts` location under `chat.promptFilesLocations`.
+
 #### Scenario: Resulting settings.json structure
 - GIVEN VS Code `settings.json` before the script runs (may be empty `{}` or have existing entries)
 - WHEN `setup-prompts.py` completes successfully
@@ -99,12 +100,12 @@ The `setup-prompts.py` script MUST modify the user-level VS Code `settings.json`
 
 ### Requirement: thunder-plugin-rules.yaml (v3.3.0) created under PluginQA/rules/
 The file `ThunderTools/PluginQA/rules/thunder-plugin-rules.yaml` MUST exist
-with version `3.2.0` and contain all 79 rules numbered sequentially (rule_01 to rule_79).
+with version `3.3.0` and contain all 79 rules numbered sequentially (rule_01 to rule_79).
 
 #### Scenario: Metadata block
 - GIVEN the YAML file
 - THEN it MUST contain a `metadata` block with:
-  `version: "3.0.0"`, `total_rules: 79`, `total_general_rules: 40`,
+  `version: "3.3.0"`, `total_rules: 79`, `total_general_rules: 40`,
   `approach: "semantic code review — understand whole plugin first, then check specifics"`,
   and a `validation_approach` block listing the 5-step workflow
   (understand whole plugin → focus on specific concern → reason in context → cite if genuinely wrong → fix)
@@ -550,10 +551,10 @@ All rules produce the same output format — there is no separate section for th
 Every failing checkpoint MUST be output as a YAML block grouped under the source file
 it belongs to. The report structure is:
 
-```
+~~~~markdown
 ### {FileName} — N issue(s)
 
-```yaml
+~~~yaml
 rule_id: <id>
 status: VIOLATION|WARNING|SUGGESTION
 severity: violation|warning|suggestion
@@ -567,8 +568,8 @@ citation: "[FileName:line] <description>"
 fix: |
   <fixed code>
 reasoning: "..."
-` ` `
-```
+~~~
+~~~~
 
 #### Scenario: File-wise grouping
 - GIVEN a plugin review that finds issues in Dictionary.cpp, Dictionary.h, and CMakeLists.txt

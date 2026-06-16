@@ -249,8 +249,7 @@ modifications are made to generated files.
 
 ## Setup Script Design
 
-All three scripts (`.ps1`, `.sh`, `.py`) do the same thing:
-
+The `setup-prompts.py` script does the following:
 1. Detect VS Code settings.json location (platform-specific paths, also checks VS Code Insiders)
 2. Create a timestamped backup of existing settings.json
 3. Parse the JSON safely (handle missing file, handle existing `chat.promptFilesLocations`)

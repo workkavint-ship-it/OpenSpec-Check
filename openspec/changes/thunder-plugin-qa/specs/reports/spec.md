@@ -21,7 +21,7 @@ with all fields needed to understand, prioritise, and track fixes.
 
 ### REQ-R2 — Interface review CSV
 
-**Scenario:** `/thunder-interface` completes all 19 rules
+**Scenario:** `/thunder-interface-review` completes all 19 rules
 - The system MUST generate a CSV file at:
   `ThunderTools/PluginQA/Reports/interface/{InterfaceName}_{YYYY-MM-DD}.csv`
 - Same no-overwrite rule applies

@@ -5,12 +5,12 @@
 ---
 
 ### Requirement: COM interface validator command
-The system MUST provide a `/thunder-interface` slash command that validates
+The system MUST provide a `/thunder-interface-review` slash command that validates
 a Thunder COM interface header against 19 rules (15 core + 4 advisory).
 
 #### Scenario: Interface with critical violations
 - GIVEN a Thunder interface file with a missing `@json` tag
-- WHEN `/thunder-interface` runs
+- WHEN `/thunder-interface-review` runs
 - THEN it reports under `🔴 Violations (Must Fix)`:
   `[IMyInterface.h:LINE] Missing @json tag — ZERO RPC code will be generated`
 - AND reports under `✅ Validated` all passing rules
@@ -160,7 +160,7 @@ When rules are added or removed, the Quick Reference table in the corresponding
 
 - AND bump the file-level `version:` field (e.g. `3.2.1` → `3.2.2`)
 - AND add a CHANGELOG entry in the `description:` block at the top of the file
-- AND save — the next time `/thunder-interface` runs it picks up the change automatically
+- AND save — the next time `/thunder-interface-review` runs it picks up the change automatically
 
 #### Scenario: Adding a new interface rule
 - GIVEN a developer needs to add a new rule (e.g. `core_18_1`)
