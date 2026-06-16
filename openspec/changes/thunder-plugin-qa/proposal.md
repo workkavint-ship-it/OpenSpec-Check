@@ -51,9 +51,9 @@ automatically.
 
 **Review reports** (CSV, generated after each review run)
 - Single CSV file per review, Excel-compatible, UTF-8, CRLF
-- Plugin report: `Reports/plugin/{PluginName}_{YYYY-MM-DD}.csv` — one row per issue
-- Interface report: `Reports/interface/{InterfaceName}_{YYYY-MM-DD}.csv` — one row per violated rule
-- Columns: No, Plugin/Interface, Date, Phase/Category, Checkpoint/Rule ID, Rule Name, Status, Severity, File, Line, Citation, Issue Description, Fix Summary, Reasoning
+- Plugin report: `ThunderTools/PluginQA/Reports/plugin/{PluginName}_{YYYY-MM-DD}.csv` — one row per issue
+- Interface report: `ThunderTools/PluginQA/Reports/interface/{InterfaceName}_{YYYY-MM-DD}.csv` — one row per violated rule
+- Columns: Plugin CSV includes `Phase`; interface CSV omits Phase/Category (see specs/reports/spec.md for the exact column lists)
 - PASS and SKIP rows excluded — only failures logged
 - Post-generation: chat message with count summary + `Start-Process` command to open in Excel
 

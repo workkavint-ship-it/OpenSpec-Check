@@ -2,7 +2,7 @@
 
 ## Architecture Overview
 
-Three VS Code Copilot Chat slash commands, each backed by a `.prompt.md` file.
+Five VS Code Copilot Chat slash commands, each backed by a `.prompt.md` file (three end-user commands plus two rule managers).
 Rules are stored in separate YAML files and loaded at runtime — prompts contain
 behaviour logic, YAML files contain the rule data. This separation means rules
 can be updated without touching prompt logic.
@@ -23,7 +23,7 @@ Plugin files in ThunderNanoServices/Dictionary/
 Chat report: FAIL citations only, PASS/SKIP as counts
        │
        ▼
-Reports/plugin/Dictionary_2026-06-05.csv   ← one row per issue, Excel-compatible
+ThunderTools/PluginQA/Reports/plugin/Dictionary_2026-06-05.csv   ← one row per issue, Excel-compatible
 ```
 
 ```
