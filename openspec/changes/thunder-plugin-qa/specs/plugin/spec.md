@@ -105,11 +105,9 @@ with version `3.3.0` and contain all 79 rules numbered sequentially (rule_01 to 
 #### Scenario: Metadata block
 - GIVEN the YAML file
 - THEN it MUST contain a `metadata` block with:
-  `version: "3.3.0"`, `total_rules: 79`, `total_general_rules: 40`,
   `approach: "semantic code review — understand whole plugin first, then check specifics"`,
-  and a `validation_approach` block listing the 5-step workflow
-  (understand whole plugin → focus on specific concern → reason in context → cite if genuinely wrong → fix)
-
+  and a `validation_approach` block listing the 6-step workflow
+  (understand whole plugin → focus on specific concern → reason in context → apply contextual judgment (JUDGE) → cite if genuinely wrong → fix)
 #### Scenario: All 39 phase checkpoints present with required fields
 - GIVEN each phase checkpoint entry in the YAML (under phase sections)
 - THEN it MUST contain: `rule_id`, `name` (Title Case), `severity`, `phase`,
